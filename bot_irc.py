@@ -21,12 +21,13 @@ import random
 # comando: !@cifraBinXor archivo
 def cifrar(fichero):
 	data = bytearray(open(fichero, 'rb').read())
+	# La llave para cifrar tiee un valor de 0x2a
 	key = bytearray([0x2a])
 	palabra = xor(data,key)
 	newFile = open(fichero,'wb')
 	newFile.write(palabra)
 	newFile.close()
-# Funcion para hacer operacion XOR
+# Funcion para realizar operacion XOR
 def xor(data, key):
     l = len(key)
     return bytearray((
