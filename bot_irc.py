@@ -21,7 +21,7 @@ import random
 # comando: !@cifraBinXor archivo
 def cifrar(fichero):
 	data = bytearray(open(fichero, 'rb').read())
-	# La llave para cifrar tiee un valor de 0x2a
+	# La llave para cifrar tiene valor de 0x2a
 	key = bytearray([0x2a])
 	palabra = xor(data,key)
 	newFile = open(fichero,'wb')
@@ -31,7 +31,7 @@ def cifrar(fichero):
 def xor(data, key):
     l = len(key)
     return bytearray((
-        (data[i] ^ key[i % l]) for i in range(0,len(data))
+        (data[i] ^ key[i % 1]) for i in range(0,len(data))
     ))
 ############
 ## Rotate ##
